@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Inter,
+  Mona_Sans,
+  Rethink_Sans,
+} from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const mona = Mona_Sans({
+  variable: "--font-mona",
+  subsets: ["latin"],
+});
+
+const rethink = Rethink_Sans({
+  variable: "--font-rethink",
   subsets: ["latin"],
 });
 
@@ -29,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${rethink.variable} antialiased`}>{children}</body>
     </html>
   );
 }

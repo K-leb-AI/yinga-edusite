@@ -24,7 +24,7 @@ export default function TwoStageToggle({
   };
 
   return (
-    <div className="flex bg-gray-100 rounded-2xl p-1">
+    <div className="flex bg-white w-full h-5">
       {stages.map((stage, index) => (
         <button
           key={index}
@@ -32,11 +32,12 @@ export default function TwoStageToggle({
           onClick={() => handleToggle(index)}
           aria-pressed={active === index}
           aria-label={`Toggle to ${stage.title}`}
-          className={`flex items-center gap-1 rounded-xl px-4 py-2 transition-all duration-200 
+          className={`flex items-center justify-center gap-1 w-1/2 transition-all duration-300 cursor-pointer py-5
             ${
               active === index
-                ? "bg-[#E8EEED] text-accent"
-                : "bg-transparent text-gray-500"
+                ? // ? "bg-[#E8EEED] text-accent"
+                  "text-accent border-b border-accent"
+                : "text-gray/70 border-transparent"
             }`}
         >
           {stage.icon}
