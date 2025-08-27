@@ -24,57 +24,57 @@ const Sidebar: FC = () => {
       routeName: "Dashboard",
       icon: <RiDashboardFill />,
       active: true,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     {
       routeName: "Students",
       icon: <PiStudentBold />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     { routeName: "Classes", icon: <MdClass />, active: false, routeLink: "/" },
     {
       routeName: "Subject",
       icon: <MdSubject />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     {
       routeName: "Teacher",
       icon: <FaChalkboardTeacher />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     {
       routeName: "Attendance",
       icon: <MdChecklist />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     { routeName: "Homework", icon: <IoHome />, active: false, routeLink: "/" },
     {
       routeName: "Class Tests",
       icon: <SiTestrail />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     {
       routeName: "Examinations",
       icon: <PiExamFill />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     {
       routeName: "Report Cards",
       icon: <HiDocumentReport />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
     {
       routeName: "Fees",
       icon: <FaMoneyBillWave />,
       active: false,
-      routeLink: "/dashboard/home",
+      routeLink: "/dashboard",
     },
   ]);
 
@@ -93,7 +93,7 @@ const Sidebar: FC = () => {
         <div className="font-bold">Yinga Edusite</div>
       </div>
       <div className="">
-        {routes.map((route) => (
+        {routes.map((route, index) => (
           <Link
             href={route.routeLink}
             className={clsx(
@@ -105,7 +105,7 @@ const Sidebar: FC = () => {
               }
             )}
             onClick={() => handleClick(route)}
-            key={route.routeName}
+            key={index}
           >
             {route.icon}
             {route.routeName}

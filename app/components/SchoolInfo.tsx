@@ -7,8 +7,6 @@ const SchoolInfoForm = () => {
       action=""
       className="flex justify-center items-center flex-col w-[300px]"
     >
-      <h1 className="text-xl font-bold">Almost there...</h1>
-      <p className="text-gray mb-10 font-light">Let's finish this!</p>
       <div className="flex flex-col mb-3 w-full">
         <label htmlFor="school" className="text-xs mb-2">
           School Name
@@ -60,7 +58,7 @@ const SchoolInfoForm = () => {
         />
       </div>
       <Link
-        href={"/auth/signup/welcome"}
+        href={"/auth/signup/user"}
         className="w-full h-10 bg-accent rounded-lg text-white text-xs hover:bg-light-accent duration-300 cursor-pointer grid place-content-center"
       >
         Continue

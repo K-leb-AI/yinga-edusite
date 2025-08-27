@@ -26,6 +26,7 @@ const DashboardAbsentees = () => {
               class={absentee.class}
               contact={absentee.contact}
               index={index}
+              key={absentee.contact}
             />
           ))
         ) : (

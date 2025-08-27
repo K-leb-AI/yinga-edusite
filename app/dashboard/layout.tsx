@@ -1,4 +1,3 @@
-import React from "react";
 import Sidebar from "../components/Sidebar";
 import Searchbar from "../components/Searchbar";
 import { IoNotificationsOutline } from "react-icons/io5";
@@ -10,7 +9,9 @@ const layout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
+  // const [user, setUser] = useState<any>();
   const icons: ReactNode[] = [<IoNotificationsOutline />, <FaRegUser />];
+
   return (
     <div className="flex overflow-hidden">
       <Sidebar />

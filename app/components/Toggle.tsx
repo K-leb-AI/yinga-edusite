@@ -1,27 +1,20 @@
 "use client";
-import { useState, ReactNode } from "react";
+import { useState, ReactNode, Dispatch, SetStateAction } from "react";
 
 // Type definitions
 interface Stage {
   title: string;
   icon: ReactNode;
+  setActive: Dispatch<SetStateAction<number>>;
+  roleIndex: number;
 }
 
 interface TwoStageToggleProps {
   stages: [Stage, Stage];
-  onToggle?: (stage: Stage) => void;
 }
 
-export default function TwoStageToggle({
-  stages,
-  onToggle,
-}: TwoStageToggleProps) {
-  const [active, setActive] = useState<number>(0);
-
-  const handleToggle = (index: number) => {
-    setActive(index);
-    if (onToggle) onToggle(stages[index]);
-  };
+export default function TwoStageToggle({ stages }: TwoStageToggleProps) {
+  // const [active, setActive] = useState<number>(0);
 
   return (
     <div className="flex bg-white w-full h-5">
@@ -29,12 +22,10 @@ export default function TwoStageToggle({
         <button
           key={index}
           type="button"
-          onClick={() => handleToggle(index)}
-          aria-pressed={active === index}
-          aria-label={`Toggle to ${stage.title}`}
+          onClick={() => stage.setActive(index)}
           className={`flex items-center justify-center gap-1 w-1/2 transition-all duration-300 cursor-pointer py-5
             ${
-              active === index
+              stage.roleIndex === index
                 ? // ? "bg-[#E8EEED] text-accent"
                   "text-accent border-b border-accent"
                 : "text-gray/70 border-transparent"

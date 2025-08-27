@@ -52,6 +52,7 @@ const homePage = () => {
               percentage={stat.percentage}
               link={stat.link}
               isPercentage={stat.isPercentage}
+              key={stat.title}
             />
           ))}
           <div className="col-span-3 row-span-3 bg-white shadow-md/3 px-5 pt-3 rounded-xl">
