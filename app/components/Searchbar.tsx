@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Searchbar = () => {
   return (
-    <form action="" className="h-full relative w-2/5">
+    <form action="" className="h-full relative w-2/5 ">
       <input
         type="text"
         placeholder="Search..."

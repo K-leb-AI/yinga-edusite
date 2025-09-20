@@ -16,7 +16,7 @@ const DashboardAbsentees = () => {
     { name: "Naana Addo", class: "Kindergarten 2", contact: "0579876543" },
   ];
   return (
-    <div className="row-span-3 px-5 py-3 text-[10px] bg-white max-h-80 col-span-1 shadow-md/3 rounded-xl">
+    <div className="row-span-3 px-5 py-3 text-[10px] bg-white-0 max-h-80 col-span-1 shadow-md/3 rounded-xl">
       <div className="text-[10px] mb-2 font-medium">Absent Today</div>
       <div className="h-9/10 custom-scrollbar overflow-y-scroll">
         {absentees.length > 0 ? (

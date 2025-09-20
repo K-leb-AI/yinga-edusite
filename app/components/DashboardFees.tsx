@@ -37,7 +37,7 @@ const data = [
 
 const DashboardFees = () => {
   return (
-    <div className="row-span-2 h-52 px-5 py-3 bg-white col-span-1 shadow-md/3 rounded-xl">
+    <div className="row-span-2 h-52 px-5 py-3 bg-white-0 col-span-1 shadow-md/3 rounded-xl">
       <div className="text-[10px] font-medium">Top Class Performances</div>
       <div className="w-full h-full">
         <ResponsiveContainer

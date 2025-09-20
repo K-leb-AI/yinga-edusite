@@ -1,11 +1,9 @@
-"use client";
-import { useState } from "react";
-import SchoolInfoForm from "@/app/components/SchoolInfo";
+import SchoolInfoForm from "@/app/components/SchoolInfoForm";
 
-const schoolInformation = () => {
+const SchoolInformation = () => {
   return (
     <div className="flex flex-col items-center">
-      <h1 className="text-xl font-bold">Let's get started</h1>
+      <h1 className="text-xl font-bold">Let&apos;s get started</h1>
       <p className="text-gray mb-4 font-light">Unlock seamless management!</p>
       <div className="mb-6 w-4/5"></div>
       <SchoolInfoForm />
@@ -13,4 +11,4 @@ const schoolInformation = () => {
   );
 };
 
-export default schoolInformation;
+export default SchoolInformation;

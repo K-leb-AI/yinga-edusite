@@ -1,5 +1,5 @@
 "use client";
-import React, { FC, ReactNode, useState } from "react";
+import React, { FC, ReactNode, useEffect, useState } from "react";
 import { RiDashboardFill } from "react-icons/ri";
 import { PiStudentBold, PiExamFill } from "react-icons/pi";
 import { MdClass, MdSubject, MdChecklist } from "react-icons/md";
@@ -10,6 +10,9 @@ import { HiDocumentReport } from "react-icons/hi";
 import { BiLogOut } from "react-icons/bi";
 import clsx from "clsx";
 import Link from "next/link";
+import { createSupabaseClient } from "../lib/supabase/client";
+import { User } from "@supabase/supabase-js";
+import { useRouter } from "next/navigation";
 
 type Route = {
   routeName: string;
@@ -86,8 +89,29 @@ const Sidebar: FC = () => {
       }))
     );
   };
+
+  const supabase = createSupabaseClient();
+  const router = useRouter(); // Move hook to component level
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
+
+  useEffect(() => {
+    const handleAuthCheck = async () => {
+      try {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+      } catch (error) {
+        console.log("Error in Logout function");
+      }
+    };
+    handleAuthCheck();
+  }, []);
+
   return (
-    <aside className="bg-white w-1/6 px-10 py-8 h-screen flex flex-col border-r-1 border-gray/20 justify-between">
+    <aside className="bg-white-0 w-1/6 px-10 py-8 h-screen flex flex-col border-r-1 border-gray/20 justify-between">
       <div className="flex gap-2 text-sm text-accent items-center">
         <RiDashboardFill />
         <div className="font-bold">Yinga Edusite</div>
@@ -112,10 +136,14 @@ const Sidebar: FC = () => {
           </Link>
         ))}
       </div>
-      <div className="flex gap-2 items-center">
+      <Link
+        className="flex gap-2 items-center hover:font-bold hover:text-white duration-200 cursor-pointer bg-white-1 hover:bg-red-500 rounded-xl py-2 px-4"
+        onClick={handleLogout}
+        href={"/auth/signup/organisation"}
+      >
         <BiLogOut />
         Logout
-      </div>
+      </Link>
     </aside>
   );
 };

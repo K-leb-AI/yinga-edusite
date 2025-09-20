@@ -33,7 +33,7 @@ const data: DashboardData[] = [
 
 const componentStyle = {
   fontSize: "10px",
-  backgroundColor: "white",
+  backgroundColor: "#ffffff00",
   outline: "none",
   height: "300px",
 };

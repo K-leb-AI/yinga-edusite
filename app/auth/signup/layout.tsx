@@ -1,6 +1,5 @@
-import React from "react";
-
-export default function signupLayout({
+"use client";
+export default function SignupLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

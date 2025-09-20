@@ -16,7 +16,7 @@ export type StatObj = {
 };
 export const StatCard = (props: StatObj) => {
   return (
-    <div className="bg-white col-span-1 row-span-1 flex flex-col shadow-md/3 justify-between px-5 py-3 h-31.5 rounded-xl">
+    <div className="bg-white-0 col-span-1 row-span-1 flex flex-col shadow-md/3 justify-between px-5 py-3 h-31.5 rounded-xl">
       <div className="text-[10px] font-medium">{props.title}</div>
       <div className="flex justify-between items-end">
         <div className="flex flex-col">
