@@ -1,12 +1,15 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const SchoolInfoForm = () => {
   const [schoolName, setSchoolName] = useState("");
   const [contact, setContact] = useState("");
   const [website, setWebsite] = useState("");
   const [country, setCountry] = useState("");
+  const router = useRouter();
 
   const handleSubmit = (): void => {
     const schoolData = {
@@ -16,7 +19,13 @@ const SchoolInfoForm = () => {
       country,
     };
 
+    if (!schoolName || !contact || !website || !country) {
+      toast.error("Fill out all fields");
+      return;
+    }
+
     localStorage.setItem("schoolData", JSON.stringify(schoolData));
+    router.push("/auth/signup/user");
   };
   return (
     <form
@@ -65,7 +74,7 @@ const SchoolInfoForm = () => {
           }}
         />
       </div>
-      <div className="flex flex-col mb-10 w-full">
+      <div className="flex flex-col mb-3 w-full">
         <label htmlFor="country" className="text-xs mb-2">
           Country
         </label>
@@ -79,14 +88,18 @@ const SchoolInfoForm = () => {
           }}
         />
       </div>
-
-      <Link
-        href={"/auth/signup/user"}
+      <div className="flex gap-1 mt-3 mb-8">
+        <span>Already have an account?</span>
+        <span className="underline font-bold">
+          <Link href={"/auth/login"}>Login</Link>
+        </span>
+      </div>
+      <div
         className="w-full h-10 bg-accent rounded-lg text-white text-xs hover:bg-light-accent duration-300 cursor-pointer grid place-content-center"
         onClick={handleSubmit}
       >
         Continue
-      </Link>
+      </div>
     </form>
   );
 };

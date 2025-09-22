@@ -7,6 +7,7 @@ import {
   Rethink_Sans,
 } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -45,7 +46,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${rethink.variable} antialiased`}>{children}</body>
+      <body className={`${rethink.variable} antialiased`}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

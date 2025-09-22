@@ -10,8 +10,7 @@ import { HiDocumentReport } from "react-icons/hi";
 import { BiLogOut } from "react-icons/bi";
 import clsx from "clsx";
 import Link from "next/link";
-import { createSupabaseClient } from "../lib/supabase/client";
-import { User } from "@supabase/supabase-js";
+import { createSupabaseClient } from "../../lib/supabase/client";
 import { useRouter } from "next/navigation";
 
 type Route = {
@@ -33,9 +32,14 @@ const Sidebar: FC = () => {
       routeName: "Students",
       icon: <PiStudentBold />,
       active: false,
+      routeLink: "/dashboard/students",
+    },
+    {
+      routeName: "Classes",
+      icon: <MdClass />,
+      active: false,
       routeLink: "/dashboard",
     },
-    { routeName: "Classes", icon: <MdClass />, active: false, routeLink: "/" },
     {
       routeName: "Subject",
       icon: <MdSubject />,
@@ -54,7 +58,12 @@ const Sidebar: FC = () => {
       active: false,
       routeLink: "/dashboard",
     },
-    { routeName: "Homework", icon: <IoHome />, active: false, routeLink: "/" },
+    {
+      routeName: "Homework",
+      icon: <IoHome />,
+      active: false,
+      routeLink: "/dashboard",
+    },
     {
       routeName: "Class Tests",
       icon: <SiTestrail />,

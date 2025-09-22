@@ -1,4 +1,4 @@
-import SchoolInfoForm from "@/app/components/SchoolInfoForm";
+import SchoolInfoForm from "@/app/components/signupComponents/SchoolInfoForm";
 
 const SchoolInformation = () => {
   return (

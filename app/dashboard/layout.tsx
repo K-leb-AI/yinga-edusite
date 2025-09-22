@@ -1,8 +1,8 @@
 "use client";
 import { createSupabaseClient } from "../lib/supabase/client";
 import { useSearchParams, useRouter } from "next/navigation";
-import Sidebar from "../components/Sidebar";
-import Searchbar from "../components/Searchbar";
+import Sidebar from "../components/dashboardComponents/Sidebar";
+import Searchbar from "../components/dashboardComponents/Searchbar";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa6";
 import { ReactNode, useEffect, useState } from "react";

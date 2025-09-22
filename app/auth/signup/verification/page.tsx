@@ -1,5 +1,5 @@
 import React from "react";
-import PasswordVerification from "@/app/components/PasswordVerification";
+import PasswordVerification from "@/app/components/signupComponents/PasswordVerification";
 
 const verificationPage = () => {
   return (

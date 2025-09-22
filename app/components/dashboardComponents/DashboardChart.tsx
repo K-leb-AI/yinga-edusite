@@ -55,7 +55,7 @@ export default function DashboardChart() {
         <CartesianGrid strokeDasharray="3 3" style={{ opacity: "40%" }} />
         <XAxis dataKey="name" />
         <YAxis />
-        <Tooltip />
+        <Tooltip labelStyle={{ color: `#000` }} />
         <Legend />
         <Line
           type="monotone"
